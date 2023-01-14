@@ -47,21 +47,24 @@ contract SaleToken is ERC20 {
     // approve the contract to withdraw the tokens from the user's balance
     approve(address(this), amount);
     // transfer the tokens from the user's balance to the contract
-    emit Transfer(msg.sender, address(this), amount);
+
+    //emit is just an event
+    //call transfer
+    //emit Transfer(msg.sender, address(this), amount);
     // calculate the ether to be paid to the user
     uint256 etherToPay = amount/500;
     // pay the user in ether
-    emit Transfer(address(this), msg.sender, etherToPay);
+    //emit Transfer(address(this), msg.sender, etherToPay);
 }
 
 
-//allow contract owner (central authority) to withdraw ETH from the contract 
+//allow contract owner (central authority) to withdraw ETH from the contract right yourself
 
     function withdraw(address payable _reciever) external payable {
         require(msg.sender == centralAuthority, "Only the central authority can withdraw ether from the contract");
         require(address(this).balance > 0, "There is no ether to withdraw");
-        
-        emit Transfer(address(this), _reciever, address(this).balance);
+        //transfer ether?
+        //emit Transfer(address(this), _reciever, address(this).balance);
     }
      
 

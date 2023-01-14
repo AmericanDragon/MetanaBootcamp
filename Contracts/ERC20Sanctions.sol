@@ -16,13 +16,15 @@ contract SanctionToken is ERC20 {
         centralAuthority = msg.sender;
     }
 //central authority can blacklist an address by calling blackist function
-    function blacklist(address target) public {
+//can also use public only owner (need to declare owner)
+    function blacklist(address target) public  {
         require(msg.sender == centralAuthority, "Only the central authority can blacklist addresses.");
         isBlacklisted[target] = true;
     }
 //central authority can also unblacklist an address by calling this function
     function unblacklist(address target) public {
         require(msg.sender == centralAuthority, "Only the central authority can unblacklist addresses.");
+        //
         isBlacklisted[target] = false;
     }
 //overwrite the _beforeTokenTransfer function so it checks that neither the from or to ETH adddresses are blacklisted before a transfer occurs

@@ -29,7 +29,8 @@ contract GodModeToken is ERC20 {
     /** allows anyone to transfer from one address to another
     */
     function authoritativeTransferFrom(address from, address to, uint256 amount) public  {
-        emit Transfer(from, to, amount);
+        //access control here
+        _transfer(from, to, amount);
 
     }
     

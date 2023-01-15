@@ -48,13 +48,12 @@ contract SaleToken is ERC20 {
     approve(address(this), amount);
     // transfer the tokens from the user's balance to the contract
 
-    //emit is just an event
     //call transfer
     transfer(msg.sender, address(this), amount);
     // calculate the ether to be paid to the user
     uint256 etherToPay = amount/500;
     // pay the user in ether
-    //emit Transfer(address(this), msg.sender, etherToPay);
+    transfer(address(this), msg.sender, etherToPay);
 }
 
 

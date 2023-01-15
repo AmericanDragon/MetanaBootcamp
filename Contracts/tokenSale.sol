@@ -50,7 +50,7 @@ contract SaleToken is ERC20 {
 
     //emit is just an event
     //call transfer
-    //emit Transfer(msg.sender, address(this), amount);
+    transfer(msg.sender, address(this), amount);
     // calculate the ether to be paid to the user
     uint256 etherToPay = amount/500;
     // pay the user in ether
@@ -64,7 +64,8 @@ contract SaleToken is ERC20 {
         require(msg.sender == centralAuthority, "Only the central authority can withdraw ether from the contract");
         require(address(this).balance > 0, "There is no ether to withdraw");
         //transfer ether?
-        //emit Transfer(address(this), _reciever, address(this).balance);
+        address payable withdrawAddress = payable(msg.sender);
+        transfer(withdrawAddress, address(this).balance);
     }
      
 

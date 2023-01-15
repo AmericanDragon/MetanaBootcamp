@@ -74,8 +74,8 @@
       ]
     },
     "/Users/acg/Documents/MetanaBootcamp/contracts/GodModeERC20.sol": {
-      "lastModificationDate": 1673679987726,
-      "contentHash": "821be56fb0e008e8891d473b2e4246ae",
+      "lastModificationDate": 1673735943860,
+      "contentHash": "b87471c017fd0f61f31d2610a38a93af",
       "sourceName": "contracts/GodModeERC20.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -107,12 +107,12 @@
         "^0.8.0"
       ],
       "artifacts": [
-        "GodModeToken"
+        "SanctionToken"
       ]
     },
     "/Users/acg/Documents/MetanaBootcamp/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
-      "lastModificationDate": 1673675054016,
-      "contentHash": "834a0dde221759af42b030253315b086",
+      "lastModificationDate": 1673713967826,
+      "contentHash": "7db0319a47b1e076574d4ca7f4b8f759",
       "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -257,8 +257,8 @@
       ]
     },
     "/Users/acg/Documents/MetanaBootcamp/contracts/ERC20Sanctions.sol": {
-      "lastModificationDate": 1673682138611,
-      "contentHash": "4bc64a9e5ecba8259778d11439936499",
+      "lastModificationDate": 1673716876494,
+      "contentHash": "48e392ece017eaabe0d413a399146ef6",
       "sourceName": "contracts/ERC20Sanctions.sol",
       "solcConfig": {
         "version": "0.8.9",
@@ -294,8 +294,8 @@
       ]
     },
     "/Users/acg/Documents/MetanaBootcamp/contracts/tokenSale.sol": {
-      "lastModificationDate": 1673713658589,
-      "contentHash": "2b10b59e9f5a468cc76cf344c2f396db",
+      "lastModificationDate": 1673736950608,
+      "contentHash": "1e87994dfb004528acdcd7cdf7cf5cd6",
       "sourceName": "contracts/tokenSale.sol",
       "solcConfig": {
         "version": "0.8.9",

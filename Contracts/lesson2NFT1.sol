@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPT-3.0
+/// SPDX-License-Identifier: GPT-3.0
 pragma solidity 0.8.7;
 
 import "@openzeppelin/contracts/utils/Strings.sol";
@@ -9,11 +9,11 @@ contract OpenZeppelinNFT is ERC721, Ownable {
 
     uint256 public tokenSupply = 0;
     uint256 public constant MAX_SUPPLY = 10;
-    uint256 public constant PRICE = 1 ether;
+    uint256 public constant PRICE = 0 ether;
 
     address immutable deployer;
 
-    constructor() ERC721("Blockchang Club", "BCC"){
+    constructor() ERC721("Fast Fighter Jets", "FFJ"){
         deployer = msg.sender;
 
     }
@@ -22,8 +22,12 @@ contract OpenZeppelinNFT is ERC721, Ownable {
         require(tokenSupply < MAX_SUPPLY,"supply used up");
         require(msg.value == PRICE, "wrong price");
         _mint(msg.sender, tokenSupply);
-        tokenSupply+=1;
+        tokenSupply++;
 
+    }
+
+    function _baseURI() internal pure override returns (string memory) {
+        return "ipfs://QmSpbhLRQsr1PZmcdCJXrwhesj4hsiEY3t9o79xpAoVV4V/";
     }
 
     function viewBalance() external view returns (uint256) {

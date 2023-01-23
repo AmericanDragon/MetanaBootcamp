@@ -1,0 +1,58 @@
+{
+
+    
+    "image": "ipfs://QmeVhk6rxUWkRBJFWMFy4UitSq4KAoEhm6ZnsFCjkZ9tCU/9.png",
+    "name": "F-22X",
+    "attributes": [
+        {
+            "trait_type": "Speed",
+            "display_type": "number",
+            "max_value": 10,
+            "value": 7
+    },
+    {
+            "trait_type": "Manuverability",
+            "display_type": "number",
+            "max_value": 10,
+            "value": 7
+    },
+    {
+            "trait_type": "Payload",
+            "display_type": "number",
+            "max_value": 10,
+            "value": 6
+    },
+    {
+            "trait_type": "Range",
+            "display_type": "number",
+            "max_value": 10,
+            "value": 7
+    },
+    {
+            "trait_type": "Stealth",
+            "display_type": "number",
+            "max_value": 10,
+            "value": 8
+    },
+    {
+            "trait_type": "Sensors",
+            "display_type": "number",
+            "max_value": 10,
+            "value": 8
+    },
+    {
+            "trait_type": "Avionics",
+            "display_type": "number",
+            "max_value": 10,
+            "value": 6
+    },
+    {
+            "trait_type": "VTOL",
+            "value": "No"
+    },
+        {
+            "trait_type": "SVTOL",
+            "value": "No"
+    }
+    ]
+}

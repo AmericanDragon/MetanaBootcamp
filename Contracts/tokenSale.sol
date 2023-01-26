@@ -33,37 +33,39 @@ contract SaleToken is ERC20 {
 //allow whoever pays into the contract to mint tokens in the ratio of 1ETH:1000 SAL tokens with a max supply of 1mill
     function mintTokens() public payable {
         require(totalSupply() <= 1000000, "Token sale is closed, we have reached the maximum supply of 1 million tokens");
-        uint256 tokensToMint = msg.value * 1000;
+        uint256 tokensToMint = msg.value/(1 ether) * 1000;
         _mint(msg.sender, tokensToMint);
     }
 
 //sell back function
-    function sellBack(uint256 amount) public {
-    require(amount > 0, "Cannot sell 0 or less tokens.");
-    require(amount <= balanceOf(msg.sender), "Insufficient balance to sell.");
-    // check if the contract has enough ether to pay the user
-    require(address(this).balance >= amount/500, "Contract does not have enough ether to pay user.");
+    function sellBack(uint256 amount) external payable {
+        require(amount > 0, "Cannot sell 0 or less tokens.");
+        require(amount <= balanceOf(msg.sender), "Insufficient balance to sell.");
+        // check if the contract has enough ether to pay the user
+        require(address(this).balance/(1 ether) >= (amount/2000), "Contract does not have enough ether to pay user.");
 
-    // approve the contract to withdraw the tokens from the user's balance
-    approve(address(this), amount);
-    // transfer the tokens from the user's balance to the contract
-    //call transfer
-    transfer(address(this), amount);
-    // calculate the ether to be paid to the user
-    uint256 etherToPay = amount/500;
-    // pay the user in ether
-    transfer(msg.sender, etherToPay);
+        // approve the contract to withdraw the tokens from the user's balance
+        approve(address(this), amount);
+        // transfer the tokens from the user's balance to the contract
+
+        transfer(address(this), amount);
+        // calculate the ether to be paid to the user
+        uint256 weitopay = (amount/1000)*(0.5 ether);
+        // pay the user in ether
+        address payable withdrawTo = payable(msg.sender);
+        withdrawTo.transfer(weitopay);
+
 }
 
 
-//allow contract owner (central authority) to withdraw ETH from the contract right yourself
+//allow contract owner (central authority) to withdraw ETH from the contract write 
 
-    function withdraw(address payable _reciever) external payable {
+    function withdraw(address payable _receiver) external payable {
         require(msg.sender == centralAuthority, "Only the central authority can withdraw ether from the contract");
         require(address(this).balance > 0, "There is no ether to withdraw");
         //transfer ether?
-        address payable withdrawAddress = payable(msg.sender);
-        transfer(withdrawAddress, address(this).balance);
+        address payable withdrawAddress = payable(_receiver);
+        withdrawAddress.transfer(address(this).balance);
     }
      
 

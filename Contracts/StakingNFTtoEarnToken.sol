@@ -11,7 +11,6 @@ import "@openzeppelin/contracts/security/Pausable.sol";
 /**
  * @title ERC721 Staking Smart Contract
  *
- * @author andreitoma8
  *
  * @notice This contract uses a simple principle to alow users to stake ERC721 Tokens and earn ERC20 Reward Tokens distributed by the owner of the contract.
  * Each time a user stakes or withdraws a new Token Id, the contract will store the time of the transaction and the amount of ERC20 Reward Tokens that the user has earned up to that point

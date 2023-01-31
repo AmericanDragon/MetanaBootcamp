@@ -1,5 +1,5 @@
 /// SPDX-License-Identifier: GPT-3.0
-pragma solidity 0.8.7;
+pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";

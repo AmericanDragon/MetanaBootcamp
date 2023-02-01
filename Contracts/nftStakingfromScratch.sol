@@ -9,7 +9,7 @@ import "stakingRewardsToken.sol";
 contract NFTStaking is Ownable, IERC721Receiver {
     //total number of nfts staked by a particular user
     uint256 public totalStaked;
-
+    //change this to test the contract
     uint256 constant SecondsPerDay = 10;
 
     // struct to store a stake's token, owner, and earning values

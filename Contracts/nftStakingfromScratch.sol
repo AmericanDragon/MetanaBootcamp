@@ -5,7 +5,6 @@ pragma solidity ^0.8.7;
 import "new-OZ-nft.sol";
 import "stakingRewardsToken.sol";
 
-
 contract NFTStaking is Ownable, IERC721Receiver {
     //total number of nfts staked by a particular user
     uint256 public totalStaked;
